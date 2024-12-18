@@ -55,7 +55,9 @@ export default function DownloadApp() {
                     borderRadius: 1.5,
                   }}
                   size={"large"}
-                  startIcon={<img src={playstore} height={24} alt="Playstore" />}
+                  startIcon={
+                    <img src={playstore} height={24} alt="Playstore" />
+                  }
                   variant="contained"
                   disableElevation
                 >
