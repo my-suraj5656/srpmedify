@@ -42,7 +42,7 @@ export default function SearchHospital() {
       }
     };
 
-    if (formData.state != "") {
+    if (formData.state !== "") {
       fetchCities();
     }
   }, [formData.state]);
