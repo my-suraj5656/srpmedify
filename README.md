@@ -2,13 +2,13 @@
 
 ## ✨ Overview
 
+**MEDIFY** is a React-based web application designed to help users find medical centers in specific states and cities across the USA. The platform allows users to search for available medical centers, book appointments, and manage their bookings. 
+
 ## 📸 Project Screenshot
 
 Here is a screenshot of the app:
 
-![MEDIFY Screenshot](src\assets\Home_Screenshot.png)
-
-**MEDIFY** is a React-based web application designed to help users find medical centers in specific states and cities across the USA. The platform allows users to search for available medical centers, book appointments, and manage their bookings. 
+![MEDIFY Screenshot](./src/assets/Home_Screenshot.png)
 
 The project includes the following key features:
 
@@ -19,6 +19,8 @@ The project includes the following key features:
 - **Carousels**: Implemented with Swiper for featured content and offers.
 
 ---
+
+![MEDIFY Screenshot](./src/assets/Booking_Section.png)
 
 ## 🛠️ Features
 
@@ -44,6 +46,7 @@ The project includes the following key features:
 - Ensures the platform is mobile-friendly and adapts to various screen sizes.
 
 ---
+![MEDIFY Screenshot](./src/assets/Footer_Section.png)
 
 ## 📡 Backend Endpoints
 
@@ -62,13 +65,6 @@ The backend API provides the data needed for various operations, including retri
 
 ---
 
-## ⚙️ Setup Instructions
-
-To run this project locally:
-
-### 🛠️ Prerequisites
-- **Node.js** (version 16.x or above)
-- **npm** or **yarn** for managing dependencies.
 
 ## 🛠️ Technologies Used
 
