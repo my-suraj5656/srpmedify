@@ -76,5 +76,5 @@ The backend API provides the data needed for various operations, including retri
 
 ## 📡 Deployed on Vercel
 
-You can view the live project here: [**MEDIFY - Live Demo**](https://your-vercel-link.vercel.app)
+You can view the live project here: [**MEDIFY - Live Demo**](https://medify-app-neon.vercel.app/)
 
