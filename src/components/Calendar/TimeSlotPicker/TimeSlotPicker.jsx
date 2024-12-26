@@ -30,37 +30,78 @@ export default function TimeSlotPicker({
     handleBooking({ ...details, bookingDate: selectedDate, bookingTime: slot });
   };
 
-  // Function to render time slots for different segments (morning, afternoon, evening)
-  const renderTimeSlots = (label, slots) =>
-    slots.length > 0 && (
-      <Stack
-        direction="row"
-        alignItems="center"
-        px={{ xs: 0, md: 6 }}
-        flexWrap="wrap"
-      >
-        <Typography width={{ xs: 1, md: "15%" }} fontSize={{ xs: 14, md: 16 }}>
-          {label}
-        </Typography>
-        {slots.map((slot) => (
-          <CustomChip
-            key={slot}
-            label={slot}
-            handleClick={() => handleClick(slot)}
-          />
-        ))}
-      </Stack>
-    );
-
   return (
     <Stack
       pt={3}
       spacing={{ xs: 2, md: 3 }}
       divider={<Divider orientation="horizontal" flexItem />}
     >
-      {renderTimeSlots("Morning", availableSlots.morning)}
-      {renderTimeSlots("Afternoon", availableSlots.afternoon)}
-      {renderTimeSlots("Evening", availableSlots.evening)}
+      {availableSlots.morning.length > 0 && (
+        <Stack
+          direction="row"
+          alignItems="center"
+          px={{ xs: 0, md: 6 }}
+          flexWrap={"wrap"}
+        >
+          <Typography
+            width={{ xs: 1, md: "15%" }}
+            fontSize={{ xs: 14, md: 16 }}
+          >
+            Morning
+          </Typography>
+          {availableSlots.morning.map((slot) => (
+            <CustomChip
+              key={slot}
+              label={slot}
+              handleClick={() => handleClick(slot)}
+            />
+          ))}
+        </Stack>
+      )}
+      {availableSlots.afternoon.length > 0 && (
+        <Stack
+          direction="row"
+          alignItems="center"
+          px={{ xs: 0, md: 6 }}
+          flexWrap={"wrap"}
+        >
+          <Typography
+            width={{ xs: 1, md: "15%" }}
+            fontSize={{ xs: 14, md: 16 }}
+          >
+            Afternoon
+          </Typography>
+          {availableSlots.afternoon.map((slot) => (
+            <CustomChip
+              key={slot}
+              label={slot}
+              handleClick={() => handleClick(slot)}
+            />
+          ))}
+        </Stack>
+      )}
+      {availableSlots.evening.length > 0 && (
+        <Stack
+          direction="row"
+          alignItems="center"
+          px={{ xs: 0, md: 6 }}
+          flexWrap={"wrap"}
+        >
+          <Typography
+            width={{ xs: 1, md: "15%" }}
+            fontSize={{ xs: 14, md: 16 }}
+          >
+            Evening
+          </Typography>
+          {availableSlots.evening.map((slot) => (
+            <CustomChip
+              key={slot}
+              label={slot}
+              handleClick={() => handleClick(slot)}
+            />
+          ))}
+        </Stack>
+      )}
     </Stack>
   );
 }

@@ -6,7 +6,7 @@ import {
   Button,
   Stack,
 } from "@mui/material";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { format } from "date-fns";
 
 // Function for triggering event
@@ -27,23 +27,28 @@ export default function BookingModal({
   const [email, setEmail] = useState("");
 
   // Handle booking logic
-  const handleBooking = useCallback((e) => {
+  const handleBooking = (e) => {
     e.preventDefault();
     triggerFirstVisitEvent();
 
-    const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
-    const newBooking = { ...bookingDetails, bookingEmail: email };
+    const bookings = localStorage.getItem("bookings") || "[]";
 
-    localStorage.setItem("bookings", JSON.stringify([...bookings, newBooking]));
+    const oldBookings = JSON.parse(bookings);
 
-    // Success message and reset state
+    localStorage.setItem(
+      "bookings",
+      JSON.stringify([
+        ...oldBookings,
+        { ...bookingDetails, bookingEmail: email },
+      ])
+    );
     showSuccessMessage(true);
     setEmail("");
     setOpen(false);
-  }, [email, bookingDetails, setOpen, showSuccessMessage]);
+  };
 
   // Date formatting
-  const formatDate = (day) => day ? format(new Date(day), "E, d LLL") : "";
+  const formatDate = (day) => (day ? format(new Date(day), "E, d LLL") : "");
 
   return (
     <Modal open={open} onClose={() => setOpen(false)}>
@@ -70,7 +75,9 @@ export default function BookingModal({
             Please enter your email to confirm booking for{" "}
           </Box>
           <Box component="span" fontWeight={600}>
-            {`${bookingDetails.bookingTime} on ${formatDate(bookingDetails.bookingDate)}`}
+            {`${bookingDetails.bookingTime} on ${formatDate(
+              bookingDetails.bookingDate
+            )}`}
           </Box>
         </Typography>
         <form onSubmit={handleBooking}>
